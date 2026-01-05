@@ -5,6 +5,16 @@ services:
       dockerfile: Dockerfile
     image: user-service
     env_file:
-      - .env
+      - ./user-service/.env
     ports:
       - "3001:3001"
+
+  task-service:
+    build:
+      context: ./task-service
+      dockerfile: Dockerfile
+    image: task-service
+    env_file:
+      - ./task-service/.env
+    ports:
+      - "3002:3002"
